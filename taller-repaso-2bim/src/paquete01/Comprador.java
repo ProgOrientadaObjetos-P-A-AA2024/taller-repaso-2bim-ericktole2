@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package taller.repaso.pkg2bim;
+package paquete01;
 
 /**
  *
@@ -13,9 +13,25 @@ public class Comprador {
     private String nombres;
     private String cedula;
 
-    public Comprador(String nombres, String cedula) {
-        this.nombres = nombres;
-        this.cedula = cedula;
+    public Comprador(String nom, String ced) {
+        nombres = nom;
+        cedula = ced;
+    }
+
+    public void establecerNombres(String nom) {
+        nombres = nom;
+    }
+
+    public void establecerCedula(String c) {
+        cedula = c;
+    }
+
+    public String obtenerNombres() {
+        return nombres;
+    }
+
+    public String obtenerCedula() {
+        return cedula;
     }
 
     @Override
