@@ -20,23 +20,10 @@ public class Concesionaria {
         calcularDatosConcesionaria();
     }
 
-    private void inicializarValoresIniciales() {
+    private void calcularDatosConcesionaria() {
         ventasTotales = 0;
         costoMasCaro = 0;
-        costoMasBarato = obtenerPrimerPrecioFinal();
-    }
-
-    private double obtenerPrimerPrecioFinal() {
-        if (listadoVehiculos.isEmpty()) {
-            return 0;
-        }
-
-        Vehiculo primerVehiculo = listadoVehiculos.obtener(0);
-        return primerVehiculo.obtenerPrecioFinal();
-    }
-
-    private void calcularDatosConcesionaria() {
-        inicializarValoresIniciales();
+        costoMasBarato = 11000000;
 
         for (Vehiculo vehiculo : listadoVehiculos) {
             double precioFinalVehiculo = vehiculo.obtenerPrecioFinal();
@@ -55,19 +42,8 @@ public class Concesionaria {
 
     @Override
     public String toString() {
-        return String.format("Concesionaria: %s\nVentas Totales: $%.2f\nCosto Vehículo Más Caro: $%.2f\nCosto Vehículo Más Barato: $%.2f\n",
+        String Cadena = String.format("Concesionaria: %s\nVentas Totales: $%.2f\nCosto Vehículo Más Caro: $%.2f\nCosto Vehículo Más Barato: $%.2f\n",
                 nombre, ventasTotales, costoMasCaro, costoMasBarato);
-    }
-
-    public double obtenerVentasTotales() {
-        return ventasTotales;
-    }
-
-    public double obtenerCostoMasCaro() {
-        return costoMasCaro;
-    }
-
-    public double obtenerCostoMasBarato() {
-        return costoMasBarato;
+        return cadena;
     }
 }
